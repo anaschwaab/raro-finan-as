@@ -16,8 +16,39 @@
 
 .card-header {
     display: flex;
-    width: 100%;
+    align-items: center;
     justify-content: space-between;
+    align-self: stretch;
+    flex: 1 0 0;
+}
+
+.icon {
+    display: flex;
+    background-color: #FEE2E2;
+    width: 32px;
+    height: 32px;
+    padding: 4px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+}
+
+.icon img {
+    color:#1E3A8A;
+    text-align: right;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.centavos {
+    font-family: Inter;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
 }
 
 .card-title {

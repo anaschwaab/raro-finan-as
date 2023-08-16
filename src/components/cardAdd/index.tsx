@@ -1,15 +1,26 @@
 import './style.css';
 import iconPlus from '../../assets/plus-sm.svg';
 
-export function CardAdd() {
+interface CardAddProps   {
+    showModal: () => void,
+}
+
+export function CardAdd({showModal}: CardAddProps) {
+    
+
     return (
         <>
             <div className="cardAdd">
                 <div className="cardAdd-img">
-                    <img src={iconPlus} alt="Ícone de adição" />
+                    <button 
+                        className="cardAdd-button"
+                        onClick={showModal}>
+                        <img src={iconPlus} alt="Ícone de adição"/>
+                    </button>
                 </div>
-                <p className="cardAdd-text">Transação</p>
+                <p className="cardAdd-text">TRANSAÇÃO</p>
             </div>
+            
         </>
     )
 }

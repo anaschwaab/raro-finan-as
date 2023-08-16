@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+.modal-container-content {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.modal-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    max-height: 640px;
+    padding: 32px;
+    border-radius: 40px;
+    background: #F1F5F9;
+    box-sizing: border-box;
+}
+
+.form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    align-self: stretch;
+}
+
+.modal-form {
+    width: 100%;
+    display: flex;
+    padding: 20px 0px;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 0 0;
+    align-self: stretch;
+}
+
+.form-group label {
+    color: #1E293B;
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.form-group input {
+    display: flex;
+    height: 56px;
+    padding: 8px 16px;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 12px;
+    border: 1px solid #E2E8F0;
+    background: #FFF;
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.modal-form-button-cancel {
+    display: flex;
+    padding: 8px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex: 1 0 0;
+    border-radius: 12px;
+    border: 2px solid var(--tailwind-colors-blue-800, #1E40AF);
+    background: var(--tailwind-colors-slate-100, #F1F5F9);
+    color: var(--tailwind-colors-slate-100, #1E40AF);
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; 
+}
+
+.modal-form-button {
+    display: flex;
+    padding: 8px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex: 1 0 0;
+    border: none;
+    border-radius: 12px;
+    background: #1E40AF;
+    color: #F1F5F9;
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+}
+
+.form-group-radio {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    align-self: stretch;
+    font-family: 'Mulish', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.form-group-radio input {
+    width: 20px;
+    height: 20px;
+}
+
+.input {
+    font-family: 'Mulish', sans-serif;
+}
+
+.form-button-container {
+    display: flex;
+    gap: 16px;
+}
+
+.modal-title {
+    font-family: 'Mulish', sans-serif;
+    border-bottom: 4px solid #1E40AF;
+    width: 100%;
+    text-align: center;
+}
