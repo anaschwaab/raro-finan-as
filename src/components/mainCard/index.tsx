@@ -1,6 +1,12 @@
 import './style.css';
+import { FormData } from '../../types/types';
 
-export function MainCard() {
+interface MainCardProps {
+    dados: FormData[];
+}
+
+export function MainCard({ dados }: MainCardProps) {
+
     return (
         <>
             <div className="main-card-container">
@@ -17,27 +23,25 @@ export function MainCard() {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr className="main-card-table-data">
-                                <td>Venda de celular antigo</td>
-                                <td>01/08/2023</td>
-                                <td>Renda extra</td>
-                                <td>R$ 1.853,12</td>
-                                <td>+</td>
-                            </tr>
-                            <tr className="main-card-table-data">
-                                <td>Ida ao cinema</td>
-                                <td>05/08/2023</td>
-                                <td>Lazer</td>
-                                <td>R$ 82,53</td>
-                                <td>-</td>
-                            </tr>
-                            <tr className="main-card-table-data">
-                                <td>Compras do mês</td>
-                                <td>07/08/2023</td>
-                                <td>Alimentação</td>
-                                <td>R$ 1.853,12</td>
-                                <td>-</td>
-                            </tr>
+                            {dados.map((dado, index) => {
+                                const valorFormatado = dado.valor.toLocaleString("pt-br", { style: "currency", currency: "BRL" }).split(",")
+
+                                const data = new Date(dado.data);
+                                const dia = String(data.getUTCDate()).padStart(2, '0');
+                                const mes = String(data.getUTCMonth() + 1).padStart(2, '0');
+                                const ano = data.getUTCFullYear();
+                                const dataFormatada = `${dia}/${mes}/${ano}`;
+
+                                return (
+                                    <tr className="main-card-table-data" key={index}>
+                                        <td>{dado.nome}</td>
+                                        <td>{dataFormatada}</td>
+                                        <td>{dado.categoria}</td>
+                                        <td>{`${valorFormatado[0]}, ${valorFormatado[1]}`}</td>
+                                        <td className="data-type">{dado.tipo ? <span className="true">+</span> : <span className="false">-</span>}</td>
+                                    </tr>
+                                )
+                            })}
                         </tbody>
                     </table>
                 </div>
